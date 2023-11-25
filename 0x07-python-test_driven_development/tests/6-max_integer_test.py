@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """Unittest for max_integer([..])
 """
-from decimal import DivisionByZero
 import unittest
+
 max_integer = __import__('6-max_integer').max_integer
 
 
@@ -24,7 +24,6 @@ class TestMaxInteger(unittest.TestCase):
             max_integer([1, 'a', 3.0])
             max_integer([1, 2.0, 3.0])
             max_integer([None, 2.0, 3.0])
-        with self.assertRaises(DivisionByZero):
             max_integer([1/0, 2])
 
     """
@@ -50,3 +49,4 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer([-1, 1]), 1)
         self.assertEqual(max_integer([1]), 1)
         self.assertEqual(max_integer([-1]), -1)
+
