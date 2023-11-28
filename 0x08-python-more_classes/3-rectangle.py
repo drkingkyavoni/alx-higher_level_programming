@@ -18,28 +18,23 @@ class Rectangle:
     """
 
     def __init__(self, width=0, height=0):
-        """
-            Initialize private width and height
-            attributes:
+        """ Initialize private width and height
+            Attributes:
                 width: int
                 height: int
-            Return: void
         """
         self.__width = width
         self.__height = height
 
     @property
     def width(self):
-        """
-            Return: __width
+        """ Set property width as private
         """
         return self.__width
 
     @width.setter
     def width(self, value):
-        """
-            Validate width as integer and greater than 0
-            Return: void
+        """ Validate width as integer and greater than 0
         """
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
@@ -49,16 +44,13 @@ class Rectangle:
 
     @property
     def height(self):
-        """
-            Return: __height
+        """ Set property height as private
         """
         return self.__height
 
     @height.setter
     def height(self, value):
-        """
-            Validate height as integer and greater than 0
-            Return: void
+        """ Validate height as integer and greater than 0
         """
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
@@ -67,31 +59,23 @@ class Rectangle:
         self.__height = value
 
     def area(self):
-        """
-            Function calculates the area of a rectangle
-            Return: int
+        """ Function calculates the area of a rectangle
         """
         return self.__width * self.__height
 
     def perimeter(self):
-        """
-            Function calculates the perimeter of a rectangle
-            Return: int
+        """ Function calculates the perimeter of a rectangle
         """
         return 2 * (self.__width + self.__height)
 
     def __str__(self) -> str:
-        """
-            Function to print str of class
-            Return: str
+        """ Function to print str of class
         """
         return "\n".join(["#" * self.__width
                           for _ in range(self.__height)])
 
     def __repr__(self) -> str:
-        """
-            Function to print repr of class
-            Return: str
+        """ Function to print repr of class
         """
         return "<{}.{} object at {}>".format(
             self.__class__.__module__,
