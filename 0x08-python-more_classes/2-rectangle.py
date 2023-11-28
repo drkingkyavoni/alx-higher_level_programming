@@ -1,13 +1,20 @@
 #!/usr/bin/python3
-"""
-    Module contains class Rectangle
-    Attributes:
-        width: getter, setter
-        height: getter, setter
+# -*- coding: utf-8 -*-
+""" _Google Python Style Guide:
+   http://google.github.io/styleguide/pyguide.html
 """
 
 
 class Rectangle:
+    """ class Square defines a square
+        Args:
+            width: int
+            height: int
+        Attributes:
+            area
+            perimeter
+    """
+
     def __init__(self, width=0, height=0):
         """
             Initialize private width and height
@@ -22,7 +29,7 @@ class Rectangle:
     @property
     def width(self):
         """
-            Return: __width
+            Return: int
         """
         return self.__width
 
@@ -41,7 +48,7 @@ class Rectangle:
     @property
     def height(self):
         """
-            Return: __height
+            Return: int
         """
         return self.__height
 

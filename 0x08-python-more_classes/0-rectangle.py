@@ -1,11 +1,13 @@
 #!/usr/bin/python3
-"""
-    Module contains class Rectangle
+# -*- coding: utf-8 -*-
+""" _Google Python Style Guide:
+   http://google.github.io/styleguide/pyguide.html
 """
 
 
 class Rectangle:
-    """
-        attribute: empty
+    """ class Square defines a square
+        Args:
+            None
     """
     pass
