@@ -17,7 +17,9 @@ def matrix_mul(m_a: list, m_b: list) -> list:
     _validateParamsElemAsIntOrFloat(params)
     _validateParamsAsRectangle(params)
     _validateParamsCantBeMultiplied(params)
-    return []
+
+    for row in m_a:
+        [sum()]
 
 
 def _validateParamsAsList(params: dict):
@@ -28,8 +30,7 @@ def _validateParamsAsList(params: dict):
 
 def _validateParamsAsListofLists(params: dict):
     for key, value in params.items():
-        if isinstance(value, list) and \
-         any(not isinstance(row, list) for row in value):
+        if any(not isinstance(row, list) for row in value):
             raise TypeError(key + " must be a list of lists")
 
 
