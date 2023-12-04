@@ -7,6 +7,7 @@ class MyList():
     """
     Class MyList
     """
+
     def __init__(self):
         """
         initializes the list
