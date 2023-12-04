@@ -4,4 +4,6 @@
 
 
 def lookup(obj):
+    """ function that looksup object directory
+    """
     return dir(obj)
