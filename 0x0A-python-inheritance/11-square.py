@@ -30,4 +30,5 @@ class Square(Rectangle):
         Returns:
             str: string rep of Square
         """
-        return super().__str__()
+        return "[{}] {}/{}".format(
+            self.__class__.__name__, self.__size, self.__size)
