@@ -6,7 +6,7 @@
 """
 
 
-def matrix_mul(m_a: list, m_b: list) -> list:
+def matrix_mul(m_a: list, m_b: list):
     """
         Function multiplies two matrices
     """
@@ -17,9 +17,6 @@ def matrix_mul(m_a: list, m_b: list) -> list:
     _validateParamsElemAsIntOrFloat(params)
     _validateParamsAsRectangle(params)
     _validateParamsCantBeMultiplied(params)
-
-    for row in m_a:
-        [sum()]
 
 
 def _validateParamsAsList(params: dict):
