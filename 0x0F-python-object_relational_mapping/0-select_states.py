@@ -5,8 +5,8 @@ import sys
 import MySQLdb
 
 """
-    Module contains get_states function
-    Returns: None
+	Module contains get_states function
+	Returns: None
 """
 
 
@@ -18,7 +18,7 @@ def get_states(_usr: str, _pwd: str, _db: str) -> None:
         host="localhost", port=3306, user=_usr, passwd=_pwd, db=_db, charset="utf8"
     )
     cursor = conn.cursor()
-    cursor.execute("select * from states order by id asc;")
+    cursor.execute("select * from states order by id asc")
     result = cursor.fetchall()
     for row in result:
         print(row)
