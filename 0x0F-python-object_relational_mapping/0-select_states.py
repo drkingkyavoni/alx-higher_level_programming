@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 
-import sys
-
-import MySQLdb
-
 """
 	Module contains get_states function
 	Returns: None
 """
+
+import sys
+
+import MySQLdb
 
 
 def get_states(_usr: str, _pwd: str, _db: str) -> None:

@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 
-import sys
-
-import MySQLdb
-
 """
     Module contains get_city_by_state function
     Returns: None
 """
+
+import sys
+
+import MySQLdb
 
 
 def get_filter_cities_by_state(_usr: str, _pwd: str, _db: str, _city: str) -> None:

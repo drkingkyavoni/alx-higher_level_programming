@@ -1,7 +1,10 @@
 #!/usr/bin/python3
+"""
+Module contains class definition of State
+"""
 
+from sqlalchemy import Column, Integer, MetaData, String
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import MetaData, Integer, Column, String
 
 metadata = MetaData()
 Base = declarative_base(metadata=metadata)
