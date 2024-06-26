@@ -1,20 +1,20 @@
 #!/usr/bin/python3
 """
-Function to get a State object from the database hbtn_0e_6_usa
+Function to update a State object from the database hbtn_0e_6_usa
 """
 
 import sys
 
 from model_state import Base, State
-from sqlalchemy import create_engine, select
+from sqlalchemy import create_engine, update
 from sqlalchemy.engine.url import URL
 
 if __name__ == "__main__":
     """
-    get a state from the database hbtn_0e_6_usa
+    update a state from the database hbtn_0e_6_usa
     """
 
-    if len(sys.argv) != 5:
+    if len(sys.argv) != 4:
         sys.exit(1)
 
     dburl = URL.create(
@@ -32,7 +32,5 @@ if __name__ == "__main__":
 
     with engine.connect() as conn:
         state = conn.execute(
-            select(State).where(State.name == sys.argv[4]).order_by(State.id)
-        ).first()
-
-        print(f"{state.id}" if state else "Nothing")
+            update(State).where(State.id == 2).values(name="New Mexico")
+        )

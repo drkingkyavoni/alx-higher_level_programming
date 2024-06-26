@@ -1,20 +1,21 @@
 #!/usr/bin/python3
 """
-Function to get a State object from the database hbtn_0e_6_usa
+lists Cities in a State from the database hbtn_0e_6_usa
 """
 
 import sys
 
+from model_city import City
 from model_state import Base, State
 from sqlalchemy import create_engine, select
 from sqlalchemy.engine.url import URL
 
 if __name__ == "__main__":
     """
-    get a state from the database hbtn_0e_6_usa
+    print cities in a state from the database hbtn_0e_6_usa
     """
 
-    if len(sys.argv) != 5:
+    if len(sys.argv) != 4:
         sys.exit(1)
 
     dburl = URL.create(
@@ -31,8 +32,11 @@ if __name__ == "__main__":
     Base.metadata.create_all(bind=engine)
 
     with engine.connect() as conn:
-        state = conn.execute(
-            select(State).where(State.name == sys.argv[4]).order_by(State.id)
-        ).first()
+        results = conn.execute(
+            select(State.name, City.id, City.name)
+            .join_from(State, City, City.state_id == State.id)
+            .order_by(City.id)
+        ).fetchall()
 
-        print(f"{state.id}" if state else "Nothing")
+        for row in results:
+            print(f"{row[0]}: ({row[1]}) {row[2]}")

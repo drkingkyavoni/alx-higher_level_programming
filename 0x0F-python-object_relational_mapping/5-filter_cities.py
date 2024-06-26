@@ -9,21 +9,32 @@ import sys
 
 import MySQLdb
 
-
-def get_filter_cities_by_state(_usr: str, _pwd: str, _db: str, _city: str) -> None:
+if __name__ == "__main__":
     """
     Function lists all cities with states
     from a db table with username and password
     """
+
+    if len(sys.argv) != 5:
+        sys.exit(1)
+
     conn = MySQLdb.connect(
-        host="localhost", port=3306, user=_usr, passwd=_pwd, db=_db, charset="utf8"
+        user=sys.argv[1],
+        passwd=sys.argv[2],
+        db=sys.argv[3],
+        host="localhost",
+        port=3306,
+        charset="utf8",
     )
+
     cursor = conn.cursor()
+
     cursor.execute(
         "select cities.name from cities join states \
         on states.id = cities.state_id and states.name = %s",
-        (_city,),
+        (sys.argv[4],),
     )
+
     results = cursor.fetchall()
     # print(results)
     print(", ".join([city[0] for city in results]))
@@ -31,6 +42,3 @@ def get_filter_cities_by_state(_usr: str, _pwd: str, _db: str, _city: str) -> No
     conn.close()
 
 
-if __name__ == "__main__":
-    _, _usr, _pwd, _db, _city = tuple(sys.argv)
-    get_filter_cities_by_state(_usr, _pwd, _db, _city)

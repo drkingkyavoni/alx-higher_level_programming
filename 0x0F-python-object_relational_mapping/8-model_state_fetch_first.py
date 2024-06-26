@@ -9,12 +9,18 @@ from model_state import Base, State
 from sqlalchemy import create_engine, select
 
 
-def get_first_state_orm(*args) -> None:
+if __name__ == "__main__":
     """
     function lists all states from the database hbtn_0e_6_usa
     """
+
+    if len(sys.argv) != 4:
+        sys.exit(1)
+
     engine = create_engine(
-        "mysql+mysqldb://{}:{}@localhost/{}".format(args[1], args[2], args[3]),
+        "mysql+mysqldb://{}:{}@localhost/{}".format(
+            sys.argv[1], sys.argv[2], sys.argv[3]
+        ),
         pool_pre_ping=True,
     )
 
@@ -23,7 +29,3 @@ def get_first_state_orm(*args) -> None:
     with engine.connect() as conn:
         state = conn.execute(select(State).order_by(State.id)).first()
         print(f"{state.id}: {state.name}" if state else "Nothing")
-
-
-if __name__ == "__main__":
-    get_first_state_orm(*sys.argv)
