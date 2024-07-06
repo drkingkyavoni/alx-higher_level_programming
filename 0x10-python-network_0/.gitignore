@@ -4,5 +4,4 @@ lib*
 *server.py
 *.cfg
 share
-:*
 .git*
