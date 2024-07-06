@@ -1,8 +1,8 @@
 bin
 include
 lib*
-*_server.py
-py*.*
+*server.py
+*.cfg
 share
 :*
 .git*
