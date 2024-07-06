@@ -4,3 +4,5 @@ lib*
 *_server.py
 py*.*
 share
+:*
+.git*
