@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Script that takes in a URL,
+# sends a POST request to the passed URL,
+# and displays the body of the response
+
+if [[ $# -lt 1 ]]; then
+	echo "Usage: ./3-methods.sh host:port"
+	exit 1
+fi
+# echo $1
+curl -s -X POST -d "email=test@gmail.com&subject='I will always be here for PLD'" $1

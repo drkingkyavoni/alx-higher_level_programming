@@ -1,0 +1,6 @@
+bin
+include
+lib*
+*_server.py
+py*.*
+share
