@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""Python script that takes in a URL, sends a request to the URL and displays the body of the response"""
+"""Python script that takes in a URL,
+sends a request to the URL and displays
+the body of the response"""
 
 from urllib.request import Request, urlopen
 from urllib.error import HTTPError
