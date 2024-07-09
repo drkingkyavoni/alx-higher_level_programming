@@ -12,7 +12,6 @@ if __name__ == "__main__":
     with get(c_url) as resp:
         for result in resp.json()[:10]:
             print(
-                "{}: {}".format(
-                    result.get("sha"), result.get("commit").get("author").get("name")
-                )
+                f'{result.get("sha")}: \
+                {result.get("commit").get("author").get("name")}'
             )
